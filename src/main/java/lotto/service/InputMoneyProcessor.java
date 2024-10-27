@@ -1,9 +1,9 @@
 package lotto.service;
 
-public class InputProcesser {
+public class InputMoneyProcessor {
     private final int buyCount;
 
-    public InputProcesser(String inputMoney) {
+    public InputMoneyProcessor(String inputMoney) {
         try {
             Integer.parseInt(inputMoney);
         } catch (Exception e) {

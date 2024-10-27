@@ -10,4 +10,12 @@ public class InputView {
         }
         return readMoney;
     }
+
+    public String readVictoryNumber() {
+        String readVictoryNumber = Console.readLine();
+        if (readVictoryNumber.isBlank()) {
+            throw new IllegalArgumentException("[ERROR] : 당첨 번호가 입력 되지 않았습니다.");
+        }
+        return readVictoryNumber;
+    }
 }
