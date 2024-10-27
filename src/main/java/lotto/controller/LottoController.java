@@ -13,13 +13,13 @@ public class LottoController {
     private InputView inputView;
     private InputMoneyProcessor moneyProcessor;
     private InputVictoryNumberProcessor victoryNumberProcessor;
-    private LottoManager ticketManager;
+    private LottoManager lottoManager;
     private Lotto lotto;
 
     public LottoController() {
         this.outputView = new OutputView();
         this.inputView = new InputView();
-        this.ticketManager = new LottoManager();
+        this.lottoManager = new LottoManager();
     }
 
     public void run() {
@@ -31,12 +31,12 @@ public class LottoController {
         outputView.printWinnerNumber();
         String victoryNumber = inputView.readVictoryNumber();
         victoryNumberProcessor = new InputVictoryNumberProcessor(victoryNumber);
-
+        outputView.printBonusNumber();
     }
 
     private void createLotto(int buyCount) {
         for (int i = 0; i < buyCount; i++) {
-            List<Integer> numbers = ticketManager.createNumber(i);
+            List<Integer> numbers = lottoManager.createNumber(i);
             outputView.printLottoNumber(numbers);
         }
     }

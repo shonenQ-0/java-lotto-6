@@ -21,4 +21,8 @@ public class LottoManager {
         storage.put(i, numbers);
         return numbers;
     }
+
+    public LinkedHashMap<Integer, List<Integer>> getStorage() {
+        return storage;
+    }
 }
