@@ -18,4 +18,12 @@ public class InputView {
         }
         return readVictoryNumber;
     }
+
+    public String readBonusNumber() {
+        String readBonusNumber = Console.readLine();
+        if (readBonusNumber.isBlank()) {
+            throw new IllegalArgumentException("[ERROR] : 보너스 번호가 입력 되지 않았습니다.");
+        }
+        return readBonusNumber;
+    }
 }

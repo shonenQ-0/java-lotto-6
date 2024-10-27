@@ -2,6 +2,7 @@ package lotto.controller;
 
 import java.util.List;
 import lotto.domain.Lotto;
+import lotto.service.InputBonusNumberProcessor;
 import lotto.service.InputMoneyProcessor;
 import lotto.service.InputVictoryNumberProcessor;
 import lotto.service.LottoManager;
@@ -13,6 +14,7 @@ public class LottoController {
     private InputView inputView;
     private InputMoneyProcessor moneyProcessor;
     private InputVictoryNumberProcessor victoryNumberProcessor;
+    private InputBonusNumberProcessor bonusNumberProcessor;
     private LottoManager lottoManager;
     private Lotto lotto;
 
@@ -32,6 +34,10 @@ public class LottoController {
         String victoryNumber = inputView.readVictoryNumber();
         victoryNumberProcessor = new InputVictoryNumberProcessor(victoryNumber);
         outputView.printBonusNumber();
+        String bonusNumber = inputView.readBonusNumber();
+        bonusNumberProcessor = new InputBonusNumberProcessor(bonusNumber);
+
+
     }
 
     private void createLotto(int buyCount) {
