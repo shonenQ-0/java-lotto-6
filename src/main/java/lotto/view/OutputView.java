@@ -1,5 +1,7 @@
 package lotto.view;
 
+import java.util.List;
+
 public class OutputView {
 
     public void printStartMessage() {
@@ -8,5 +10,9 @@ public class OutputView {
 
     public void printBuyCount(int buyCount) {
         System.out.println(buyCount + "개를 구매했습니다.");
+    }
+
+    public void printLottoNumber(List<Integer> numbers) {
+        System.out.println(numbers);
     }
 }
